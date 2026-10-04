@@ -35,6 +35,9 @@ app.use(session({
  cookie:{httpOnly:true,sameSite:'lax',secure:process.env.NODE_ENV==='production',maxAge:86400000}
 }));
 app.use(express.static(path.join(__dirname,'public')));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 function auth(req,res,next){if(!req.session.userId)return res.status(401).json({error:'Not signed in'});next();}
 function user(req){return db.prepare('SELECT id,name,email,role,created_at FROM users WHERE id=?').get(req.session.userId);}
