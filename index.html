@@ -1,29 +1,696 @@
-<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Titan Crest Holdings | UK Investor Portal</title>
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Titan Crest Holdings</title>
+
 <style>
-:root{--bg:#060606;--p:#111;--g:#d9ad43;--g2:#f2cf73;--t:#f7f3e8;--m:#9d9990;--l:#29261f;--ok:#83c98d}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:Arial,sans-serif}a{color:inherit;text-decoration:none}.top{height:72px;border-bottom:1px solid var(--l);display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;background:#060606ed;z-index:5}.brand{font-weight:800;letter-spacing:2px}.brand b{color:var(--g);font:30px Georgia;margin-right:10px}.brand small{display:block;color:var(--g);font-size:8px;letter-spacing:4px;margin-left:42px}.nav{display:flex;gap:24px;color:#aaa;font-size:13px}.nav a:hover{color:var(--g2)}.btn{border:1px solid var(--g);background:none;color:var(--g2);padding:12px 18px;border-radius:5px;cursor:pointer}.gold{background:var(--g);color:#090909;font-weight:bold}.wrap{max-width:1150px;margin:auto;padding:0 5%}.hero{padding:85px 0}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--g2);font-weight:bold}.hero h1{font:clamp(45px,7vw,78px)/1 Georgia;margin:15px 0}.hero h1 span{color:var(--g2)}.hero p{max-width:650px;color:var(--m);line-height:1.7}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.title{font:38px Georgia;margin:60px 0 22px}.cards,.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.stats{grid-template-columns:repeat(4,1fr)}.card,.stat{background:var(--p);border:1px solid var(--l);border-radius:13px;padding:22px}.card p,.stat p{color:var(--m);font-size:13px;line-height:1.6}.tag{display:inline-block;border:1px solid var(--l);border-radius:99px;color:var(--g2);font-size:10px;padding:5px 9px;margin-bottom:10px}.price{font-size:29px;font-weight:bold}.return{color:var(--g2);font-size:13px}.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{text-align:left;padding:13px 8px;border-bottom:1px solid var(--l)}.table th{font-size:10px;color:var(--g2)}.ok{color:var(--ok)}.notice{border:1px solid #55451f;background:#0d0c09;padding:19px;border-radius:13px;color:#aaa;font-size:13px;line-height:1.7}.footer{border-top:1px solid var(--l);margin-top:60px;padding:30px 5%;color:#666;font-size:11px}.modal{display:none;position:fixed;inset:0;background:#000c;place-items:center;padding:20px;z-index:10}.modal.show{display:grid}.box{width:min(450px,100%);background:#111;border:1px solid var(--l);border-radius:13px;padding:25px}.box input{width:100%;padding:13px;margin:6px 0;background:#080808;color:white;border:1px solid var(--l);border-radius:5px}.close{float:right;background:none;border:0;color:#aaa;font-size:22px}.dash{display:none}.dash.show{display:block}.userbar{display:flex;justify-content:space-between;align-items:center;gap:15px}.balance{font:42px Georgia}.small{font-size:12px;color:#999}@media(max-width:750px){.nav{display:none}.cards,.stats{grid-template-columns:1fr}.hero{padding-top:55px}}
-</style></head><body>
-<header class="top"><a class="brand" href="#"><b>♜</b>TITAN CREST<small>HOLDINGS</small></a><nav class="nav"><a href="#plans">Plans</a><a href="#dashboard">Dashboard</a><a href="#contact">Contact</a></nav><button class="btn gold" id="authBtn">Investor Login</button></header>
-<section id="landing"><section class="hero wrap"><div class="eyebrow">TITAN CREST HOLDINGS • UNITED KINGDOM</div><h1>Building <span>Wealth.</span><br>Creating Legacy.</h1><p>A UK-focused investor portal prototype with account authentication and a private dashboard.</p><div class="actions"><a class="btn gold" href="#plans">Explore Plans</a><button class="btn" onclick="openAuth('register')">Create Account</button></div></section>
-<main class="wrap"><div class="stats"><div class="stat"><div class="price">£800+</div><p>Example starting investment</p></div><div class="stat"><div class="price">GBP</div><p>Portal currency</p></div><div class="stat"><div class="price">24/7</div><p>Dashboard access</p></div><div class="stat"><div class="price">3</div><p>Example plans</p></div></div>
-<h2 class="title" id="plans">Investment Plans</h2><div class="cards">
-<div class="card"><span class="tag">FOUNDATION</span><h3>Foundation</h3><div class="price">£800+</div><p class="return">Terms set per opportunity</p><p>Portfolio record, investment statement and defined investment period.</p><button class="btn" onclick="demoPlan('Foundation')">Select Demo Plan</button></div>
-<div class="card"><span class="tag">MOMENTUM</span><h3>Momentum</h3><div class="price">£2,500+</div><p class="return">Terms set per opportunity</p><p>Portfolio monitoring, periodic reporting and risk disclosures.</p><button class="btn" onclick="demoPlan('Momentum')">Select Demo Plan</button></div>
-<div class="card"><span class="tag">LEGACY</span><h3>Legacy</h3><div class="price">£10,000+</div><p class="return">Terms set per opportunity</p><p>Private opportunity review and detailed documentation.</p><button class="btn" onclick="demoPlan('Legacy')">Select Demo Plan</button></div>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#060606;
+  color:#fff;
+}
+
+header{
+  padding:18px;
+  background:#111;
+  border-bottom:1px solid #292929;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#999;
+  font-size:11px;
+}
+
+button{
+  border:0;
+  border-radius:8px;
+  padding:12px 16px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.primary{
+  background:#fff;
+  color:#000;
+}
+
+.secondary{
+  background:#222;
+  color:#fff;
+}
+
+.wrap{
+  max-width:900px;
+  margin:auto;
+  padding:25px 18px;
+}
+
+.hero{
+  padding:35px 0;
+}
+
+.hero h1{
+  font-size:36px;
+  margin-bottom:8px;
+}
+
+.muted{
+  color:#aaa;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:#111;
+  border:1px solid #292929;
+  border-radius:14px;
+  padding:20px;
+}
+
+.card h3{
+  margin-top:0;
+}
+
+.amount{
+  font-size:28px;
+  font-weight:bold;
+  margin:10px 0;
+}
+
+nav{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:20px 0;
+}
+
+nav button{
+  background:#181818;
+  color:#fff;
+}
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modalbox{
+  width:100%;
+  max-width:420px;
+  background:#111;
+  border:1px solid #333;
+  border-radius:15px;
+  padding:25px;
+}
+
+input{
+  width:100%;
+  padding:13px;
+  margin:7px 0 14px;
+  border-radius:8px;
+  border:1px solid #444;
+  background:#080808;
+  color:#fff;
+}
+
+label{
+  color:#bbb;
+  font-size:14px;
+}
+
+.row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    TITAN CREST <span>HOLDINGS</span>
+  </div>
+
+  <div id="authButtons">
+
+    <button class="secondary" onclick="openAuth('login')">
+      Login
+    </button>
+
+    <button class="primary" onclick="openAuth('register')">
+      Register
+    </button>
+
+  </div>
+
+</header>
+
+
+<div class="wrap">
+
+<!-- HOME -->
+
+<section id="landing" class="page active">
+
+  <div class="hero">
+
+    <h1>Titan Crest Holdings</h1>
+
+    <p class="muted">
+      A modern UK-focused investment management platform.
+    </p>
+
+    <div class="row">
+
+      <button class="primary"
+              onclick="openAuth('register')">
+        Create Account
+      </button>
+
+      <button class="secondary"
+              onclick="openAuth('login')">
+        Customer Login
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="cards">
+
+    <div class="card">
+
+      <h3>Foundation</h3>
+
+      <p class="muted">
+        Investment plan
+      </p>
+
+      <div class="amount">
+        £800
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>Momentum</h3>
+
+      <p class="muted">
+        Investment plan
+      </p>
+
+      <div class="amount">
+        £2,500
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>Legacy</h3>
+
+      <p class="muted">
+        Investment plan
+      </p>
+
+      <div class="amount">
+        £10,000
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CUSTOMER DASHBOARD -->
+
+<section id="dashboard" class="page">
+
+  <h2>Dashboard</h2>
+
+  <p id="welcome" class="muted"></p>
+
+
+  <nav>
+
+    <button onclick="showPage('dashboard')">
+      Dashboard
+    </button>
+
+    <button onclick="showPage('social')">
+      Social
+    </button>
+
+    <button onclick="logout()">
+      Logout
+    </button>
+
+  </nav>
+
+
+  <div class="cards">
+
+    <div class="card">
+
+      <h3>Stocks</h3>
+
+      <div class="amount" id="stocks">
+        £0.00
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>Shares</h3>
+
+      <div class="amount" id="shares">
+        £0.00
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <br>
+
+
+  <div class="card">
+
+    <h3>Account</h3>
+
+    <p id="accountInfo"
+       class="muted">
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- SOCIAL -->
+
+<section id="social" class="page">
+
+  <h2>Social</h2>
+
+  <p class="muted">
+    Connect with the Titan Crest community.
+  </p>
+
+
+  <div class="cards">
+
+    <div class="card">
+
+      <h3>Community</h3>
+
+      <p class="muted">
+        Community content and discussions.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>Updates</h3>
+
+      <p class="muted">
+        Company news and announcements.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <br>
+
+  <button class="secondary"
+          onclick="showPage('dashboard')">
+    Back to Dashboard
+  </button>
+
+</section>
+
 </div>
-<h2 class="title" id="dashboard">Investor Dashboard</h2><div class="notice">Sign in to open your private dashboard. Account data is stored locally in the prototype database; no real deposits or investments are processed.</div>
-<h2 class="title">Risk & Compliance</h2><div class="notice"><b>Prototype only:</b> plans, balances and investment records are illustrative. This website does not accept deposits, execute investments or guarantee returns. A real UK investment service must establish the appropriate FCA permissions and compliant financial promotions before operating.</div>
-<h2 class="title" id="contact">Contact</h2><div class="cards"><div class="card"><p><b>Email</b><br>titancrestgoldings@gmail.com</p></div><div class="card"><p><b>TikTok</b><br>titan.crest.holdings</p></div><div class="card"><p><b>YouTube</b><br>@TitancrestHoldings</p></div></div></main></section>
-<section id="dashboardApp" class="dash wrap"><h2 class="title">Investor Dashboard</h2><div class="userbar card"><div><span class="tag">SIGNED IN</span><h3 id="welcome"></h3><p id="emailDisplay"></p></div><button class="btn" onclick="logout()">Log out</button></div><div class="stats" style="margin-top:15px"><div class="stat"><div class="price" id="total">£0</div><p>Example portfolio records</p></div><div class="stat"><div class="price" id="count">0</div><p>Investment records</p></div><div class="stat"><div class="price">GBP</div><p>Currency</p></div><div class="stat"><div class="price ok">Active</div><p>Account</p></div></div><h2 class="title">Investment records</h2><div class="card"><table class="table"><thead><tr><th>PLAN</th><th>AMOUNT</th><th>STATUS</th><th>DATE</th></tr></thead><tbody id="rows"></tbody></table></div></section>
-<footer class="footer">© 2026 Titan Crest Holdings. UK-focused prototype. No investment returns are guaranteed.</footer>
-<div class="modal" id="modal"><div class="box"><button class="close" onclick="closeAuth()">×</button><h2 id="modalTitle" style="font:28px Georgia"></h2><p id="modalText" class="small"></p><div id="form"></div><button class="btn gold" style="width:100%;margin-top:8px" onclick="submitAuth()">Continue</button></div></div>
+
+
+<footer>
+  Titan Crest Holdings
+</footer>
+
+
+<!-- LOGIN / REGISTER -->
+
+<div id="modal" class="modal">
+
+  <div class="modalbox">
+
+    <h2 id="modalTitle">
+      Customer Login
+    </h2>
+
+
+    <div id="nameField">
+
+      <label>Name</label>
+
+      <input
+        id="name"
+        placeholder="Your name"
+      >
+
+    </div>
+
+
+    <label>Email</label>
+
+    <input
+      id="email"
+      type="email"
+      placeholder="you@example.com"
+    >
+
+
+    <label>Password</label>
+
+    <input
+      id="password"
+      type="password"
+      placeholder="Password"
+    >
+
+
+    <div class="row">
+
+      <button class="primary"
+              onclick="submitAuth()">
+        Continue
+      </button>
+
+      <button class="secondary"
+              onclick="closeAuth()">
+        Cancel
+      </button>
+
+    </div>
+
+
+    <p id="authMessage"
+       class="muted">
+    </p>
+
+  </div>
+
+</div>
+
+
 <script>
-let authMode='login';
-const $=id=>document.getElementById(id);
-function openAuth(mode){authMode=mode;$('modalTitle').textContent=mode==='login'?'Investor Login':'Create Investor Account';$('modalText').textContent='Secure account demo. Use an email and an 8+ character password.';$('form').innerHTML=mode==='login'?'<input id="email" type="email" placeholder="Email address"><input id="password" type="password" placeholder="Password">':'<input id="name" placeholder="Full name"><input id="email" type="email" placeholder="Email address"><input id="password" type="password" placeholder="Password">';$('modal').classList.add('show')}
-function closeAuth(){$('modal').classList.remove('show')}
-async function submitAuth(){let body={email:$('email').value,password:$('password').value};if(authMode==='register')body.name=$('name').value;let r=await fetch('/api/'+(authMode==='login'?'login':'register'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});let d=await r.json();if(!r.ok)return alert(d.error);closeAuth();loadDashboard()}
-async function loadDashboard(){let r=await fetch('/api/me');if(!r.ok)return;let d=await r.json();$('landing').style.display='none';$('dashboardApp').classList.add('show');$('welcome').textContent='Welcome, '+d.user.name;$('emailDisplay').textContent=d.user.email;$('count').textContent=d.investments.length;let total=d.investments.reduce((s,x)=>s+Number(x.amount_gbp),0);$('total').textContent='£'+total.toLocaleString('en-GB');$('rows').innerHTML=d.investments.length?d.investments.map(x=>`<tr><td>${x.plan}</td><td>£${Number(x.amount_gbp).toLocaleString('en-GB')}</td><td>${x.status}</td><td>${new Date(x.created_at).toLocaleDateString('en-GB')}</td></tr>`).join(''):'<tr><td colspan="4">No investment records yet.</td></tr>';window.scrollTo(0,0)}
-async function logout(){await fetch('/api/logout',{method:'POST'});$('dashboardApp').classList.remove('show');$('landing').style.display='block'}
-async function demoPlan(plan){let r=await fetch('/api/demo-investment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan})});if(r.status===401){openAuth('login');return}let d=await r.json();if(!r.ok)return alert(d.error);loadDashboard()}
-$('authBtn').onclick=()=>openAuth('login');loadDashboard();
-</script></body></html>
+
+let authMode = "login";
+
+
+function openAuth(mode){
+
+  authMode = mode;
+
+  document.getElementById("modalTitle").textContent =
+    mode === "login"
+      ? "Customer Login"
+      : "Create Account";
+
+
+  document.getElementById("nameField").style.display =
+    mode === "login"
+      ? "none"
+      : "block";
+
+
+  document.getElementById("modal")
+    .classList.add("show");
+
+
+  document.getElementById("authMessage")
+    .textContent = "";
+
+}
+
+
+function closeAuth(){
+
+  document.getElementById("modal")
+    .classList.remove("show");
+
+}
+
+
+async function submitAuth(){
+
+  const name =
+    document.getElementById("name")
+      .value.trim();
+
+  const email =
+    document.getElementById("email")
+      .value.trim();
+
+  const password =
+    document.getElementById("password")
+      .value;
+
+
+  const message =
+    document.getElementById("authMessage");
+
+
+  message.textContent =
+    "Please wait...";
+
+
+  const url =
+    authMode === "login"
+      ? "/api/login"
+      : "/api/register";
+
+
+  const body =
+    authMode === "login"
+      ? {email,password}
+      : {name,email,password};
+
+
+  try{
+
+    const response =
+      await fetch(url,{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify(body)
+      });
+
+
+    const data =
+      await response.json();
+
+
+    if(!response.ok){
+
+      message.textContent =
+        data.error ||
+        "Unable to continue.";
+
+      return;
+
+    }
+
+
+    closeAuth();
+
+    await loadDashboard();
+
+
+  }catch(error){
+
+    message.textContent =
+      "Unable to connect to the server.";
+
+  }
+
+}
+
+
+async function loadDashboard(){
+
+  try{
+
+    const response =
+      await fetch("/api/me");
+
+
+    if(!response.ok){
+
+      showPage("landing");
+
+      return;
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    document.getElementById("welcome")
+      .textContent =
+      "Welcome, " + data.user.name;
+
+
+    document.getElementById("accountInfo")
+      .textContent =
+      data.user.email;
+
+
+    const holdings =
+      data.holdings || {};
+
+
+    document.getElementById("stocks")
+      .textContent =
+      "£" +
+      Number(
+        holdings.stocks_gbp || 0
+      ).toLocaleString(
+        "en-GB",
+        {
+          minimumFractionDigits:2
+        }
+      );
+
+
+    document.getElementById("shares")
+      .textContent =
+      "£" +
+      Number(
+        holdings.shares_gbp || 0
+      ).toLocaleString(
+        "en-GB",
+        {
+          minimumFractionDigits:2
+        }
+      );
+
+
+    document.getElementById("authButtons")
+      .innerHTML =
+      '<button class="secondary" onclick="showPage(\'dashboard\')">Dashboard</button>';
+
+
+    showPage("dashboard");
+
+
+  }catch(error){
+
+    showPage("landing");
+
+  }
+
+}
+
+
+async function logout(){
+
+  await fetch(
+    "/api/logout",
+    {method:"POST"}
+  );
+
+  location.reload();
+
+}
+
+
+function showPage(page){
+
+  document
+    .querySelectorAll(".page")
+    .forEach(element =>
+      element.classList.remove("active")
+    );
+
+
+  const selected =
+    document.getElementById(page);
+
+
+  if(selected){
+
+    selected.classList.add("active");
+
+  }
+
+}
+
+
+loadDashboard();
+
+</script>
+
+</body>
+</html>
