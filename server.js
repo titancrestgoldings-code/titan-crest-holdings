@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 const db = new Database('/tmp/titancrest.db');
 
-db.pragma('journal_mode = WAL');
+//db.pragma('journal_mode = WAL');
 
 db.exec(`
 CREATE TABLE IF NOT EXISTS users(
