@@ -5,7 +5,7 @@ const Database = require('better-sqlite3');
 const path = require('path');
 
 const app = express();
-const db = new Database('titancrest.db');
+const db = new Database('/tmp/titancrest.db');
 
 db.pragma('journal_mode = WAL');
 
